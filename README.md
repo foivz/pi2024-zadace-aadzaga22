@@ -11,11 +11,9 @@ A sada, vrijeme je za prvi korak rada na vašem projektu. 🙂 Za upis/opis vaš
 (U redak iznad navedite naziv projekta koji ste dobili za analizu!)
 
 ## Podaci o studentu
-(Ispod promijenite samo drugi redak tablice!)
-
 Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
 ------------  | ------------------- | ----- | ---------------------
-Ime i prezime | mojaadresa@foi.hr | 000000000 | githubuser
+Antonijo Adžaga | aadzaga22@foi.hr | 0016158599 | aadzaga22
 
 
 ## Opis domene
