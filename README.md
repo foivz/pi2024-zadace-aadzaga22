@@ -1,15 +1,5 @@
-# Inicijalne upute za izradu zadaća
-Poštovane kolegice i kolege, 
-
-čestitamo vam jer ste uspješno kreirali **repozitorij** koji ćete koristiti za izradu vašeg projekta, tj. za pisanje vaših triju zadaća. To će uključivati izradu dokumentacije i programskog kôda.
-
-Molim vas izmijenite ovaj dokument kako biste u njemu naveli naziv i kratak opis projekta koji obrađujete u vašim zadaćama, kao i vaše osobne podatke. Za upute o sintaksi koju možete koristiti u ovom dokumentu i kod pisanja vaše projektne dokumentacije obavezno pogledajte upute o sintaksi koje su dostupne na Moodleu, a dodatno i [ovaj link](https://guides.github.com/features/mastering-markdown/).
-
-A sada, vrijeme je za prvi korak rada na vašem projektu. 🙂 Za upis/opis vašeg programskog proizvoda molimo vas koristite **predložak** koji je naveden u nastavku. Započnite tako da kliknete na *olovku* u desnom gornjem kutu ovoga dokumenta te izbrišite sve što je iznad _Naziva projekta_, kao i sve upute koje su navedene u zagradama u predlošku ispod.
-
 # Naziv projekta
-(U redak iznad navedite naziv projekta koji ste dobili za analizu!)
-
+Softver za upravljanje recikliranjem i kapacitetima u gradu
 ## Podaci o studentu
 Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
 ------------  | ------------------- | ----- | ---------------------
@@ -17,15 +7,21 @@ Antonijo Adžaga | aadzaga22@foi.hr | 0016158599 | aadzaga22
 
 
 ## Opis domene
-(Vlastitim riječima opišite domenu ili problem koji pokriva projekt vaše zadaće!)
-
+Potrebno je napraviti softver koji će pomoći radnicima u centrima za recikliranje. Softver mora osigurati evidenciju dostupnih materijala, rezervaciju istih te praćenje
+recikliranih materijala. 
 ## Specifikacija projekta
-(Vlastitim riječima opišite zahtjeve za izradu ovog programskog proizvoda!)
+•	FZ – 1 - Sustav će omogućiti pristup samo autentificiranim korisnicima.
+•	FZ – 2 - Sustav će omogućiti prikaz evidencije trenutno dostupnih materijala 
+•	FZ – 3 - Sustav će omogućiti ulozi “menadžer” definiranje informacija o kapacitetu i cijenama 
+•	FZ – 4 - Sustav će omogućiti evidenciju primljenih materijala u skladište 
+•	FZ – 5 - Sustav će omogućiti ispis statistike skladišta  
+•	FZ – 6 - Sustav će omogućiti kreiranje novih transakcija  
+•	FZ – 7 - Sustav će omogućiti popis svih rezervacija  
+•	FZ – 8 - Sustav će omogućiti ulozi “menadžer” kreiranje izvještaja 
 
 ## Zadatak
 (U root repozitorija učitajte zadatak koji ste dobili i potom ovdje stavite link na njegovo otvaranje!)
 
 ## Resursi
-(Zadaće je obvezno predati u obliku Wiki stranica na ovom repozitoriju. Slike i druge artefakte koje ćete koristiti na wiki stranicama smjestite u mapu dokumentacije u repozitoriju!)
 
 Svi resursi nalaze se u mapi _Documentation_.
