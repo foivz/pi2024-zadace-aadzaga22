@@ -27,7 +27,7 @@ recikliranih materijala.
 •	FZ – 8 - Sustav će omogućiti ulozi “menadžer” kreiranje izvještaja 
 
 ## Zadatak
-[Korisnički zahtjevi - Softver za upravljanje recikliranjem i kapacitetima u gradu.pdf
+[Link za zadatak
 ](https://github.com/foivz/pi2024-zadace-aadzaga22/blob/8f779d2f0dec3eabc6689505873489bdd4107860/Korisni%C4%8Dki%20zahtjevi%20-%20Softver%20za%20upravljanje%20recikliranjem%20i%20kapacitetima%20u%20gradu.pdf)https://github.com/foivz/pi2024-zadace-aadzaga22/blob/8f779d2f0dec3eabc6689505873489bdd4107860/Korisni%C4%8Dki%20zahtjevi%20-%20Softver%20za%20upravljanje%20recikliranjem%20i%20kapacitetima%20u%20gradu.pdf
 ## Resursi
 
