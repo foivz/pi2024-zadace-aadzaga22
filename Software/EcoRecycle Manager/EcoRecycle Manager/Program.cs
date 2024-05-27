@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace EcoRecycle_Manager
         [STAThread]
         static void Main()
         {
+            DB.SetConfiguration("PI2324_aadzaga22_DB", "PI2324_aadzaga22_User", "ua@.(BCU");
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
