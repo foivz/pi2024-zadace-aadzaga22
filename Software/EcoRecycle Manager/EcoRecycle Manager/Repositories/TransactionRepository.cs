@@ -11,11 +11,11 @@ namespace EcoRecycle_Manager.Repositories
 {
     public class TransactionRepository
     {
-        public static Transaction GetTransaction(int id)
+        public static Transaction GetTransaction(int transactionID)
         {
             Transaction transaction = null;
 
-            string sql = $"SELECT * FROM Transaction WHERE TransactionID = {id}";
+            string sql = $"SELECT * FROM [dbo].[Transaction] WHERE TransactionID = {transactionID}";
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
             if (reader.HasRows)
@@ -33,7 +33,7 @@ namespace EcoRecycle_Manager.Repositories
         {
             var transactions = new List<Transaction>();
 
-            string sql = "SELECT * FROM Transaction";
+            string sql = "SELECT * FROM [dbo].[Transaction]";
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
             while (reader.Read())
