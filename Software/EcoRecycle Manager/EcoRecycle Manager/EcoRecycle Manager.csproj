@@ -63,6 +63,7 @@
     <Compile Include="Models\WasteType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\RecyclingCenterRepository.cs" />
     <Compile Include="Repositories\TransactionRepository.cs" />
     <EmbeddedResource Include="FrmTransactions.resx">
       <DependentUpon>FrmTransactions.cs</DependentUpon>
