@@ -76,5 +76,12 @@ namespace EcoRecycle_Manager
         {
 
         }
+
+        private void btnAddTransaction_Click(object sender, EventArgs e)
+        {
+            FrmAddTransaction frmAddTransaction = new FrmAddTransaction();
+            frmAddTransaction.ShowDialog();
+            ShowTransactions();
+        }
     }
 }

@@ -101,7 +101,16 @@ namespace EcoRecycle_Manager.Repositories
             DB.CloseConnection();
         }
 
+        public static void AddTransaction(Transaction transaction)
+        {
+            string dateTimeString = transaction.DateTime.ToString("yyyy-MM-ddTHH:mm:ss");
+            string sql = $"INSERT INTO [dbo].[Transaction] (DateTime, CustomerID, CenterID, EmployeeID, WasteTypeID, Quantity, Unit) " +
+                         $"VALUES ('{dateTimeString}', {transaction.CustomerID}, {transaction.CenterID}, {transaction.EmployeeID}, {transaction.WasteTypeID}, {transaction.Quantity}, '{transaction.Unit}')";
 
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
 
 
 

@@ -14,6 +14,7 @@ namespace EcoRecycle_Manager.Models
         public string Position { get; set; }
         public string ContactNumber { get; set; }
         public string Email { get; set; }
+        public string FullName => $"{Name} {Surname}";
 
         public override string ToString()
         {

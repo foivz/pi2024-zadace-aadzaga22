@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAddTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddTransaction.Designer.cs">
+      <DependentUpon>FrmAddTransaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTransactions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Repositories\RecyclingCenterRepository.cs" />
     <Compile Include="Repositories\TransactionRepository.cs" />
     <Compile Include="Repositories\WasteTypeRepository.cs" />
+    <EmbeddedResource Include="FrmAddTransaction.resx">
+      <DependentUpon>FrmAddTransaction.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTransactions.resx">
       <DependentUpon>FrmTransactions.cs</DependentUpon>
     </EmbeddedResource>
