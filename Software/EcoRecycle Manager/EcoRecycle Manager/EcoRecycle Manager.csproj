@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="Models\RecyclingCenter.cs" />
     <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Models\WasteType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\TransactionRepository.cs" />
