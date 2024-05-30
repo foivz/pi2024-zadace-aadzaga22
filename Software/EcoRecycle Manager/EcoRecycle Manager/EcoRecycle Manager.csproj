@@ -56,6 +56,7 @@
     <Compile Include="FrmTransactions.Designer.cs">
       <DependentUpon>FrmTransactions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\RecyclingCenter.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -71,5 +71,10 @@ namespace EcoRecycle_Manager
                 MessageBox.Show("Molimo odaberite red za brisanje.");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
