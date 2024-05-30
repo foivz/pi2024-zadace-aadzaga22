@@ -93,7 +93,13 @@ namespace EcoRecycle_Manager.Repositories
 
             return transactions;
         }
-
+        public static void DeleteTransaction(int transactionID)
+        {
+            string sql = $"DELETE FROM [dbo].[Transaction] WHERE TransactionID = {transactionID}";
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
 
 
 

@@ -52,6 +52,9 @@ namespace EcoRecycle_Manager
             dgvTransactions.DataSource = transactions;
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
