@@ -54,7 +54,22 @@ namespace EcoRecycle_Manager
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (dgvTransactions.SelectedRows.Count > 0)
+            {
+                int selectedIndex = dgvTransactions.SelectedRows[0].Index;
+                int transactionID = (int)dgvTransactions[0, selectedIndex].Value;
+                var result = MessageBox.Show("Jeste li sigurni da želite izbrisati transakciju?", "Potvrda brisanja", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                if (result == DialogResult.Yes)
+                {
+                    TransactionRepository.DeleteTransaction(transactionID);
+                    ShowTransactions();
+                }    
+            }
+            else
+            {
+                MessageBox.Show("Molimo odaberite red za brisanje.");
+            }
         }
     }
 }
