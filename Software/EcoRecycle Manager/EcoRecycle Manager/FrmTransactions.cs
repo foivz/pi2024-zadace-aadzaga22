@@ -38,5 +38,20 @@ namespace EcoRecycle_Manager
         {
             Close();
         }
+
+        //Prazna metoda referencira se na search bar
+        private void txtSearch_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearch.Text;
+            List<Transaction> transactions = TransactionRepository.SearchTransactions(searchTerm);
+            dgvTransactions.DataSource = transactions;
+        }
+
+
     }
 }

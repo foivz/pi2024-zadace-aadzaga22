@@ -74,6 +74,31 @@ namespace EcoRecycle_Manager.Repositories
             return transaction;
         }
 
+        public static List<Transaction> SearchTransactions(string searchTerm)
+        {
+            var transactions = new List<Transaction>();
+
+            string sql = $"SELECT * FROM [dbo].[Transaction] WHERE CAST(CustomerID AS VARCHAR) LIKE '%{searchTerm}%' ";
+
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            while (reader.Read())
+            {
+                Transaction transaction = CreateObject(reader);
+                transactions.Add(transaction);
+            }
+
+            reader.Close();
+            DB.CloseConnection();
+
+            return transactions;
+        }
+
+
+
+
+
+
 
 
 
