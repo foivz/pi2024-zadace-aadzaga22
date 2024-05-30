@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvTransactions = new System.Windows.Forms.DataGridView();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,15 +41,26 @@
             this.dgvTransactions.Location = new System.Drawing.Point(3, 3);
             this.dgvTransactions.Name = "dgvTransactions";
             this.dgvTransactions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTransactions.Size = new System.Drawing.Size(797, 444);
+            this.dgvTransactions.Size = new System.Drawing.Size(857, 402);
             this.dgvTransactions.TabIndex = 0;
             this.dgvTransactions.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(765, 411);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(83, 31);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Zatvori";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(860, 450);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvTransactions);
             this.Name = "FrmTransactions";
             this.Text = "Form1";
@@ -61,6 +73,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvTransactions;
+        private System.Windows.Forms.Button btnClose;
     }
 }
 
