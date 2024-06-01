@@ -127,7 +127,7 @@
             this.Controls.Add(this.cbCustomer);
             this.Controls.Add(this.dtpDateTime);
             this.Name = "FrmAddTransaction";
-            this.Text = "FrmAddTransaction";
+            this.Text = "Upravljanje Transakcijama";
             this.Load += new System.EventHandler(this.FrmAddTransaction_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

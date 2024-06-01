@@ -51,7 +51,13 @@ namespace EcoRecycle_Manager
             List<Transaction> transactions = TransactionRepository.SearchTransactions(searchTerm);
             dgvTransactions.DataSource = transactions;
         }
-
+        private void btnSearchWasteType_Click(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearch1.Text;
+            List<Transaction> transactions = TransactionRepository.SearchTransactions2(searchTerm);
+            dgvTransactions.DataSource = transactions;
+            
+        }
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvTransactions.SelectedRows.Count > 0)
@@ -100,5 +106,7 @@ namespace EcoRecycle_Manager
                 ShowTransactions(); // Osvježi prikaz nakon dodavanja nove transakcije
             }
         }
+
+      
     }
 }

@@ -93,6 +93,29 @@ namespace EcoRecycle_Manager.Repositories
 
             return transactions;
         }
+
+        public static List<Transaction> SearchTransactions2(string searchTerm)
+        {
+            var transactions = new List<Transaction>();
+
+            string sql = $"SELECT * FROM [dbo].[Transaction] WHERE CAST(wasteTypeID AS VARCHAR) LIKE '%{searchTerm}%' ";
+
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            while (reader.Read())
+            {
+                Transaction transaction = CreateObject(reader);
+                transactions.Add(transaction);
+            }
+
+            reader.Close();
+            DB.CloseConnection();
+
+            return transactions;
+        }
+
+
+
         public static void DeleteTransaction(int transactionID)
         {
             string sql = $"DELETE FROM [dbo].[Transaction] WHERE TransactionID = {transactionID}";
