@@ -14,14 +14,26 @@ namespace EcoRecycle_Manager
 {
     public partial class FrmAddTransaction : Form
     {
+        private Transaction transactionToUpdate;
+
         public FrmAddTransaction()
         {
             InitializeComponent();
         }
 
+        public FrmAddTransaction(Transaction transaction)
+        {
+            InitializeComponent();
+            transactionToUpdate = transaction;
+        }
+
         private void FrmAddTransaction_Load(object sender, EventArgs e)
         {
             LoadComboBoxes();
+            if (transactionToUpdate != null)
+            {
+                LoadTransactionData();
+            }
         }
 
         private void LoadComboBoxes()
@@ -46,27 +58,56 @@ namespace EcoRecycle_Manager
             cbWasteType.DisplayMember = "Name";
             cbWasteType.ValueMember = "WasteTypeID";
         }
+        private void LoadTransactionData()
+        {
+            dtpDateTime.Value = transactionToUpdate.DateTime;
+            cbCustomer.SelectedValue = transactionToUpdate.CustomerID;
+            cbCenter.SelectedValue = transactionToUpdate.CenterID;
+            cbEmployee.SelectedValue = transactionToUpdate.EmployeeID;
+            cbWasteType.SelectedValue = transactionToUpdate.WasteTypeID;
+            txtQuantity.Text = transactionToUpdate.Quantity.ToString();
+            txtUnit.Text = transactionToUpdate.Unit;
+        }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
+
             this.Close();
 
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Transaction transaction = new Transaction
+            if (transactionToUpdate == null)
             {
-                DateTime = dtpDateTime.Value,
-                CustomerID = (int)cbCustomer.SelectedValue,
-                CenterID = (int)cbCenter.SelectedValue,
-                EmployeeID = (int)cbEmployee.SelectedValue,
-                WasteTypeID = (int)cbWasteType.SelectedValue,
-                Quantity = decimal.Parse(txtQuantity.Text),
-                Unit = txtUnit.Text
-            };
+                Transaction newTransaction = new Transaction
+                {
+                    DateTime = dtpDateTime.Value,
+                    CustomerID = (int)cbCustomer.SelectedValue,
+                    CenterID = (int)cbCenter.SelectedValue,
+                    EmployeeID = (int)cbEmployee.SelectedValue,
+                    WasteTypeID = (int)cbWasteType.SelectedValue,
+                    Quantity = decimal.Parse(txtQuantity.Text),
+                    Unit = txtUnit.Text
+                };
 
-            TransactionRepository.AddTransaction(transaction);
+                TransactionRepository.AddTransaction(newTransaction);
+            }
+            else
+            {
+                transactionToUpdate.DateTime = dtpDateTime.Value;
+                transactionToUpdate.CustomerID = (int)cbCustomer.SelectedValue;
+                transactionToUpdate.CenterID = (int)cbCenter.SelectedValue;
+                transactionToUpdate.EmployeeID = (int)cbEmployee.SelectedValue;
+                transactionToUpdate.WasteTypeID = (int)cbWasteType.SelectedValue;
+                transactionToUpdate.Quantity = decimal.Parse(txtQuantity.Text);
+                transactionToUpdate.Unit = txtUnit.Text;
+
+                TransactionRepository.UpdateTransaction(transactionToUpdate);
+            }
+
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
     }

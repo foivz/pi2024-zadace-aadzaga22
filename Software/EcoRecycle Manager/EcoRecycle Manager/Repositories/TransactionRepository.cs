@@ -112,7 +112,18 @@ namespace EcoRecycle_Manager.Repositories
             DB.CloseConnection();
         }
 
+        public static void UpdateTransaction(Transaction transaction)
+        {
 
+            string dateTimeString = transaction.DateTime.ToString("yyyy-MM-ddTHH:mm:ss");
+            string sql = $"UPDATE [dbo].[Transaction] SET DateTime = '{dateTimeString}', CustomerID = {transaction.CustomerID}, CenterID = {transaction.CenterID}, " +
+                         $"EmployeeID = {transaction.EmployeeID}, WasteTypeID = {transaction.WasteTypeID}, Quantity = {transaction.Quantity.ToString(System.Globalization.CultureInfo.InvariantCulture)}, Unit = '{transaction.Unit}' " +
+                         $"WHERE TransactionID = {transaction.TransactionID}";
+
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
 
 
 

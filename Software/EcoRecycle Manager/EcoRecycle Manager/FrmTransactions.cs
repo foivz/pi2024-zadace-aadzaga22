@@ -74,14 +74,31 @@ namespace EcoRecycle_Manager
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (dgvTransactions.SelectedRows.Count > 0)
+            {
+                int selectedIndex = dgvTransactions.SelectedRows[0].Index;
+                int transactionID = (int)dgvTransactions[0, selectedIndex].Value;
+                Transaction transactionToUpdate = TransactionRepository.GetTransaction(transactionID);
 
+                FrmAddTransaction frmUpdateTransaction = new FrmAddTransaction(transactionToUpdate);
+                if (frmUpdateTransaction.ShowDialog() == DialogResult.OK)
+                {
+                    ShowTransactions(); // Osvježi prikaz nakon ažuriranja transakcije
+                }
+            }
+            else
+            {
+                MessageBox.Show("Molimo odaberite red za ažuriranje.");
+            }
         }
 
         private void btnAddTransaction_Click(object sender, EventArgs e)
         {
             FrmAddTransaction frmAddTransaction = new FrmAddTransaction();
-            frmAddTransaction.ShowDialog();
-            ShowTransactions();
+            if (frmAddTransaction.ShowDialog() == DialogResult.OK)
+            {
+                ShowTransactions(); // Osvježi prikaz nakon dodavanja nove transakcije
+            }
         }
     }
 }
